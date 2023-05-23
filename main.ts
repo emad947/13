@@ -1,8 +1,8 @@
-let player = game.createSprite(0, 0)
-for (let i = 0; i < 5; i++) {
-    for (let j = 0; j < 5; j++) {
-        player.set(LedSpriteProperty.Y, i)
-        player.set(LedSpriteProperty.X, j)
-        basic.pause(400)
+basic.forever(function on_forever() {
+    let rain = game.createSprite(randint(0, 4), 0)
+    for (let i = 0; i < 4; i++) {
+        rain.change(LedSpriteProperty.Y, 1)
+        basic.pause(200)
     }
-}
+    rain.delete()
+})
